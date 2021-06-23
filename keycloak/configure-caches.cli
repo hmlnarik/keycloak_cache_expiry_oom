@@ -1,5 +1,8 @@
 embed-server --server-config=standalone-ha.xml --std-out=echo
 
+
+/subsystem=logging/logger=org.infinispan:add(level=TRACE)
+
 # activate statistics
 /subsystem=infinispan/cache-container=keycloak/replicated-cache=work:write-attribute(name=statistics-enabled,value=true)
 /subsystem=infinispan/cache-container=keycloak/distributed-cache=sessions:write-attribute(name=statistics-enabled,value=true)

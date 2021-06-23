@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 /opt/jboss/keycloak/bin/add-user.sh jmxuser password
 
-/opt/jboss/tools/docker-entrypoint.sh
+exec /opt/jboss/tools/docker-entrypoint.sh
